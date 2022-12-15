@@ -1,17 +1,17 @@
 
 import propTypes from 'prop-types'
-
+import { Box } from './All.styled'
 
 export const Popularfilm = ({title, imgSrc}) => {
     return(
-        <div>
+        <Box>
             <img
-            src={imgSrc}
+            src={imgSrc && 'https://image.tmdb.org/t/p/w300' + imgSrc}
             alt={title}
-            width="150px"
+            width="250px"
             height="auto"
             />
-        </div>
+        </Box>
     )
 }
 

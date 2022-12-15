@@ -10,11 +10,11 @@ export const fetchFilmId = (movie_id) => {
 }
 
 export const fetchInformFilm = (movie_id) => {
-    return fetch( `${BASE_URL}/movie/${movie_id}?api_key=${KEY}`)
+    return fetch( `${BASE_URL}/movie/${movie_id}/credits?api_key=${KEY}`)
 }
 
 export const fetchActorFilm = (movie_id) => {
-    return fetch (`${BASE_URL}/movie/${movie_id}?api_key=${KEY}`)
+    return fetch (`${BASE_URL}/movie/${movie_id}/reviews?api_key=${KEY}`)
 }
 
 export const fetchViewsFilm = (query) => {

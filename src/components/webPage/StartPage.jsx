@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Popularfilm } from "components/PopularFilm";
 import { Links } from "components/All.styled";
 
-export const Start = () => {
+ const Start = () => {
     const location = useLocation()
     const [ movies, setMovies]  = useState([])
 
@@ -26,3 +26,5 @@ export const Start = () => {
         </div>
     )
 }
+
+export default Start
