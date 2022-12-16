@@ -10,24 +10,24 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams();
-  const querty = searchParams.get('querty') ?? '';
+  const query = searchParams.get('query') ?? '';
 
   useEffect(() => {
-    if (!querty) {
+    if (!query) {
       return;
     }
-    fetchViewsFilm(querty)
+    fetchViewsFilm(query)
       .then(result => result.json())
-      .then(data => setMovies(data.result))
+      .then(data => setMovies(data.results))
       .catch(error => console.log(error));
-  }, [querty]);
+  }, [query]);
 
   return (
     <div>
       <SearchBar />
-      {movies.map(({ id, title, poster_path }) => (
+      {Boolean(movies?.length) && movies.map(({ id, title, poster_path }) => (
         <Links to={`/movies/${id}`} key={id} state={{ from: location }}>
-          <Popularfilm title={title} imgSrc={poster_path} id={id}></Popularfilm>
+          <Popularfilm title={title} imgSrc={poster_path} id={id} />
         </Links>
       ))}
     </div>

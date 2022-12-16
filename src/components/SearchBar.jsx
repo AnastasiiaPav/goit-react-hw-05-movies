@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 export const SearchBar = () => {
   // eslint-disable-next-line no-unused-vars
@@ -10,7 +10,7 @@ export const SearchBar = () => {
     event.preventDefault();
 
     if (!search) {
-      alert('Введите какой фильм ві хотите посмотреть');
+      alert('Введите какой фильм вы хотите посмотреть');
     }
     setSearchParams(search !== '' ? { query: search } : {});
     setSearch('');
@@ -21,9 +21,9 @@ export const SearchBar = () => {
   };
 
   return (
-    <Form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <input type="text" onChange={onChange} value={search} />
       <button type="submit">Search</button>
-    </Form>
+    </form>
   );
 };
